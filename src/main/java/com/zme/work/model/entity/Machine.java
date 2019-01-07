@@ -42,4 +42,14 @@ public class Machine {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
+    @Override
+    public String toString() {
+        return "Machine{" +
+                "pkid=" + pkid +
+                ", version='" + version + '\'' +
+                ", changshang='" + changshang + '\'' +
+                ", birth=" + birth +
+                '}';
+    }
 }

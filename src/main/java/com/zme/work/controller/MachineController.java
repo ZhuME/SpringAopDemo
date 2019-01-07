@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @auth zme on 2019/1/7 10:49
@@ -24,5 +25,14 @@ public class MachineController {
         machine.setChangshang("华为");
         machineService.insertMachine(machine);
         return machine;
+    }
+    @RequestMapping(value = "/getAllMachine")
+    public List<Machine> getAllMachine(){
+        return machineService.getAllMachine();
+    }
+
+    @RequestMapping(value = "/getMachineByPkid")
+    public Machine getMachineByPkid(int pkid){
+        return machineService.getMachineByPkid(pkid);
     }
 }

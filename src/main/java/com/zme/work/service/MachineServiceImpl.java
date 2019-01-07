@@ -2,6 +2,8 @@ package com.zme.work.service;
 
 import com.zme.work.model.dao.MachineMapper;
 import com.zme.work.model.entity.Machine;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,12 @@ import java.util.List;
  **/
 @Service("machineService")
 public class MachineServiceImpl implements MachineService{
+    public static final Logger log = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
     @Autowired
     MachineMapper machineMapper;
     public Machine getMachineByPkid(Integer pkid) {
         Machine machine = machineMapper.selectByPrimaryKey(pkid);
+        log.info("log:"+machine.toString());
         return machine;
     }
 

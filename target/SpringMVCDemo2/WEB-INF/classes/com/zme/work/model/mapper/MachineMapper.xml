@@ -79,7 +79,7 @@
       birth = #{birth,jdbcType=DATE}
     where pkid = #{pkid,jdbcType=INTEGER}
   </update>
-  <select id="getAllMachine" >
+  <select id="getAllMachine" resultType="com.zme.work.model.entity.Machine">
     select * from machine
   </select>
 </mapper>
